@@ -62,9 +62,19 @@ export const GameForm = () => {
                 </div>
                 <div className="form-group">
                     <label htmlFor="gameTypeId">Game Type Id: </label>
-                    <input type="text" name="gameTypeId" required autoFocus className="form-control"
+                    <select name="gameTypeId" onChange={changeGameState}>
+                            <option>Select a game</option>
+                            {
+                                gameTypes.map(gameType => {
+                                    return <option value={gameType.id}>{gameType.label}</option>
+                                
+                                })
+                            }
+                        </select>
+                   
+                    {/* <input type="text" name="gameTypeId" required autoFocus className="form-control"
                         onChange={changeGameState}
-                    />
+                    /> */}
                 </div>
 
             </fieldset>

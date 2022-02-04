@@ -49,3 +49,13 @@ export const updateGame = (game, id) => {
     })
         
 }
+
+export const deleteGame = (id) => {
+    fetch(`http://localhost:8000/games/${id}`, {
+        method: "DELETE",
+        headers:{
+            "Authorization": `Token ${localStorage.getItem("lu_token")}`
+        }
+    })       
+}
+
